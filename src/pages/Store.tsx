@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useApiGet, TypeApiResponse } from "../hooks/useApiHook";
+import { StoreItem } from "../components/StoreItem";
+import * as S from "./Store.styled";
 
 interface Product {
-  id: Number;
-  title: String;
-  price: Number;
-  images: Array<String>;
+  id: number;
+  title: string;
+  price: number;
+  images: Array<string>;
 }
 
 export function Store() {
@@ -23,19 +25,23 @@ export function Store() {
     }
   }, [data]);
 
-  console.log(products);
-
-  //   if (!data.loading) console.log(data);
   return (
-    <>
-      <h1>Store</h1>
-      <div>
+    <S.StoreContainer>
+      <S.ProductsContainer>
+        {data.loading && <p>Loading products</p>}
+
+        {data.error && <p>Error fetching products {data.error.message}</p>}
+
         {!data.loading &&
           products &&
           products.map((product) => {
-            return <div key={String(product.id)}>{product.title}</div>;
+            return (
+              <S.ProductCard key={String(product.id)}>
+                <StoreItem {...product} />
+              </S.ProductCard>
+            );
           })}
-      </div>
-    </>
+      </S.ProductsContainer>
+    </S.StoreContainer>
   );
 }

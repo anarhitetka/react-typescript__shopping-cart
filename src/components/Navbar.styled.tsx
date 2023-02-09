@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   width: 100%;
   padding: 0 20px;
   height: 80px;
+  background-color: var(--primary);
   box-shadow: -3px -3px 16px 3px var(--shadow-dark);
   -webkit-box-shadow: -3px -3px 16px 3px var(--shadow-dark);
   -moz-box-shadow: -3px -3px 16px 3px var(--shadow-dark);
