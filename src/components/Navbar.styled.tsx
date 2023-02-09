@@ -9,9 +9,9 @@ export const Nav = styled.nav`
   width: 100%;
   padding: 0 20px;
   height: 80px;
-  box-shadow: -3px -3px 16px 3px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: -3px -3px 16px 3px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: -3px -3px 16px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: -3px -3px 16px 3px var(--shadow-dark);
+  -webkit-box-shadow: -3px -3px 16px 3px var(--shadow-dark);
+  -moz-box-shadow: -3px -3px 16px 3px var(--shadow-dark);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -28,11 +28,11 @@ export const Nav = styled.nav`
 `;
 
 export const NavButton = styled.button`
-  background-color: #fff;
+  background-color: var(--primary);
   border: none;
   border-radius: 2px;
   box-sizing: border-box;
-  color: #383838;
+  color: var(--secondary-medium);
   cursor: pointer;
   font-family: "Noto Sans", sans-serif;
   font-size: 17px;
@@ -43,10 +43,10 @@ export const NavButton = styled.button`
   padding: 13px 21px;
   text-align: center;
   &:hover {
-    color: #757575;
+    color: var(--secondary-light);
   }
   &:active {
-    color: #aeaf4f;
+    color: var(--green-medium);
   }
   @media (max-width: 420px) {
     width: 80vw;
@@ -54,8 +54,8 @@ export const NavButton = styled.button`
 `;
 
 export const NavButtonShoppingCart = styled.button`
-  background-color: #fff;
-  border: 1px solid grey;
+  background-color: var(--primary);
+  border: 1px solid var(--secondary-light);
   margin-right: 20px;
   padding: 10px 12px;
   border-radius: 50px;
@@ -65,12 +65,13 @@ export const NavButtonShoppingCart = styled.button`
     margin-right: 0;
   }
   &:hover {
-    background-color: #ebebeb;
+    background-color: var(--green-light);
+    border: 1px solid var(--green-medium);
   }
 `;
 
 export const NumOfItemsInCart = styled.div`
-  background-color: #f72121;
+  background-color: var(--red-notification);
   color: white;
   height: 1.5rem;
   width: 1.5rem;

@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap");
 
+:root {
+  --primary: #fff;
+  --secondary-medium: #383838;
+  --secondary-light: #757575;
+  --red-notification: #f72121;
+  --green-light: #fbfce1;
+  --green-medium: #aeaf4f;
+  --shadow-dark: rgba(0, 0, 0, 0.25);
+}
 body {
   margin: 0;
   padding: 0;
