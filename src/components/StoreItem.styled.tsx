@@ -31,17 +31,31 @@ export const AddToCartSection = styled.div`
   justify-content: center;
 `;
 
+export const CartControlsWrapper = styled.div`
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 5px;
+  width: 150px;
+  text-align: center;
+`;
+
 export const CartButton = styled.div`
   border: 1px solid orange;
   padding: 10px;
   border-radius: 20px;
   margin: 0 5px;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  font-size: 0.9rem;
 `;
 
 export const ChangeQuantityBtn = styled.span`
-  padding: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
 `;
 
 export const Quantity = styled.span`
-  padding: 5px;
+  padding: 5px 15px;
 `;

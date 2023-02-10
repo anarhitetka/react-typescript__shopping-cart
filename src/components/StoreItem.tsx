@@ -1,5 +1,6 @@
 import * as S from "./StoreItem.styled";
 import { formatCurrency } from "../utils/formatCurrency";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 type StoreItemProps = {
   id: number;
@@ -15,8 +16,16 @@ export function StoreItem({
   price,
   images,
   thumbnail,
-}: StoreItemProps) {
-  const quantity = 1;
+}: StoreItemProps): JSX.Element {
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingCart();
+
+  const quantity = getItemQuantity(id);
+
   return (
     <>
       {images && (
@@ -29,14 +38,29 @@ export function StoreItem({
           <h4>{title}</h4>
           <p>{formatCurrency(price)}</p>
         </S.CardTitleAndPrice>
+
         <S.AddToCartSection>
-          <S.CartButton>
-            <S.ChangeQuantityBtn>-</S.ChangeQuantityBtn>
+          <S.CartControlsWrapper>
+            <S.ChangeQuantityBtn onClick={() => decreaseCartQuantity(id)}>
+              -
+            </S.ChangeQuantityBtn>
+
             <S.Quantity>{quantity}</S.Quantity>
-            <S.ChangeQuantityBtn>+</S.ChangeQuantityBtn>
-          </S.CartButton>
-          <S.CartButton>ADD TO CART</S.CartButton>
-          <S.CartButton>remove</S.CartButton>
+
+            <S.ChangeQuantityBtn onClick={() => increaseCartQuantity(id)}>
+              +
+            </S.ChangeQuantityBtn>
+          </S.CartControlsWrapper>
+
+          {quantity == 0 ? (
+            <S.CartButton onClick={() => increaseCartQuantity(id)}>
+              ADD TO CART
+            </S.CartButton>
+          ) : (
+            <S.CartButton onClick={() => removeFromCart(id)}>
+              REMOVE FROM CART
+            </S.CartButton>
+          )}
         </S.AddToCartSection>
       </S.CardBody>
     </>
