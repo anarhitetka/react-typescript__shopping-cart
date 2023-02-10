@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import * as S from "./Navbar.styled.tsx";
 import cartSvg from "../assets/cart.svg";
+import { useShoppingCart } from "../context/ShoppingCartContext.tsx";
 
 export function Navbar(): JSX.Element {
+  const { cartItemsQuantity } = useShoppingCart();
+
   return (
     <S.Nav>
       <S.LogoNavbar>
@@ -23,7 +26,7 @@ export function Navbar(): JSX.Element {
       <div>
         <S.NavButtonShoppingCart>
           <img src={cartSvg} alt="shopping cart" />
-          <S.NumOfItemsInCart>15</S.NumOfItemsInCart>
+          <S.NumOfItemsInCart>{cartItemsQuantity}</S.NumOfItemsInCart>
         </S.NavButtonShoppingCart>
       </div>
     </S.Nav>

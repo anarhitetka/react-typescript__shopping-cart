@@ -14,6 +14,7 @@ type ShoppingCartContextType = {
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
+  cartItemsQuantity: number;
 };
 
 const ShoppingCartContext = createContext({} as ShoppingCartContextType);
@@ -26,6 +27,11 @@ export function ShoppingCartContextProvider({
   children,
 }: ContextProviderProps): JSX.Element {
   const [cartItems, setCartItems] = useState<Array<CartItem>>([]);
+
+  const cartItemsQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -76,6 +82,7 @@ export function ShoppingCartContextProvider({
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
+        cartItemsQuantity,
       }}
     >
       {children}
