@@ -9,6 +9,9 @@
   --green-medium: #aeaf4f;
   --shadow-dark: rgba(0, 0, 0, 0.25);
   --shadow-light: rgba(0, 0, 0, 0.07);
+  --blue-light: rgb(213, 247, 245);
+  --blue-medium: rgb(90, 175, 170);
+  --blue-dark: rgb(41, 70, 68);
 }
 body {
   margin: 0;
