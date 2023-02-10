@@ -26,7 +26,22 @@ export const CardTitleAndPrice = styled.div`
   }
 `;
 
-export const AddToCart = styled.div`
+export const AddToCartSection = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+export const CartButton = styled.div`
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 5px;
+`;
+
+export const ChangeQuantityBtn = styled.span`
+  padding: 5px;
+`;
+
+export const Quantity = styled.span`
+  padding: 5px;
 `;

@@ -6,14 +6,22 @@ type StoreItemProps = {
   title: string;
   price: number;
   images: Array<string>;
+  thumbnail: string;
 };
 
-export function StoreItem({ id, title, price, images }: StoreItemProps) {
+export function StoreItem({
+  id,
+  title,
+  price,
+  images,
+  thumbnail,
+}: StoreItemProps) {
+  const quantity = 1;
   return (
     <>
       {images && (
         <S.ImageWrapper>
-          <S.Image src={images[0]} alt="product image" />
+          <S.Image src={thumbnail} alt="product image" />
         </S.ImageWrapper>
       )}
       <S.CardBody>
@@ -21,9 +29,15 @@ export function StoreItem({ id, title, price, images }: StoreItemProps) {
           <h4>{title}</h4>
           <p>{formatCurrency(price)}</p>
         </S.CardTitleAndPrice>
-        <S.AddToCart>
-          <button>ADD TO SHOPPING CART</button>
-        </S.AddToCart>
+        <S.AddToCartSection>
+          <S.CartButton>
+            <S.ChangeQuantityBtn>-</S.ChangeQuantityBtn>
+            <S.Quantity>{quantity}</S.Quantity>
+            <S.ChangeQuantityBtn>+</S.ChangeQuantityBtn>
+          </S.CartButton>
+          <S.CartButton>ADD TO CART</S.CartButton>
+          <S.CartButton>remove</S.CartButton>
+        </S.AddToCartSection>
       </S.CardBody>
     </>
   );
