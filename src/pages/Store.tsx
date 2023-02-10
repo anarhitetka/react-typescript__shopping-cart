@@ -11,7 +11,7 @@ interface Product {
   thumbnail: string;
 }
 
-export function Store() {
+export function Store(): JSX.Element {
   const [products, setProducts] = useState<Array<Product>>([
     {},
   ] as Array<Product>);

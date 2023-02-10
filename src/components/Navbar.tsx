@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import * as S from "./Navbar.styled.tsx";
 import cartSvg from "../assets/cart.svg";
 
-export function Navbar() {
+export function Navbar(): JSX.Element {
   return (
     <S.Nav>
       <S.LogoNavbar>

@@ -5,7 +5,7 @@ import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { ShoppingCartContextProvider } from "./context/ShoppingCartContext";
 
-function App() {
+function App(): JSX.Element {
   return (
     <ShoppingCartContextProvider>
       <div>

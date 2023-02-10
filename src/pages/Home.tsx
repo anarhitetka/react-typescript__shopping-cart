@@ -1,3 +1,3 @@
-export function Home() {
-    return <h1>Home</h1>
+export function Home(): JSX.Element {
+  return <h1>Home</h1>;
 }
