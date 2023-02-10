@@ -7,14 +7,16 @@ type ContextProviderProps = {
 type CartItem = {
   id: number;
   quantity: number;
+  price: number;
 };
 
 type ShoppingCartContextType = {
   getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (id: number) => void;
+  increaseCartQuantity: (id: number, price: number) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
   cartItemsQuantity: number;
+  cartItems: Array<CartItem>;
   openCart: () => void;
   closeCart: () => void;
   isOpen: boolean;
@@ -32,23 +34,16 @@ export function ShoppingCartContextProvider({
   const [cartItems, setCartItems] = useState<Array<CartItem>>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  // get number of types of products * selected quantity of each type
-  //   const cartItemsQuantity = cartItems.reduce(
-  //     (quantity, item) => item.quantity + quantity,
-  //     0
-  //   );
-
-  // get only number of types of products added:
   const cartItemsQuantity = cartItems.length;
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
-  function increaseCartQuantity(id: number) {
+  function increaseCartQuantity(id: number, price: number) {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
-        return [...currItems, { id, quantity: 1 }];
+        return [...currItems, { id, price, quantity: 1 }];
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
@@ -99,6 +94,7 @@ export function ShoppingCartContextProvider({
         decreaseCartQuantity,
         removeFromCart,
         cartItemsQuantity,
+        cartItems,
         openCart,
         closeCart,
         isOpen,

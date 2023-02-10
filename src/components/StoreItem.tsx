@@ -52,7 +52,7 @@ export function StoreItem({
 
             <button
               className="increase-btn"
-              onClick={() => increaseCartQuantity(id)}
+              onClick={() => increaseCartQuantity(id, price)}
             >
               +
             </button>
@@ -61,7 +61,7 @@ export function StoreItem({
           {quantity === 0 ? (
             <button
               className="add-to-cart-btn"
-              onClick={() => increaseCartQuantity(id)}
+              onClick={() => increaseCartQuantity(id, price)}
             >
               ADD TO CART
             </button>

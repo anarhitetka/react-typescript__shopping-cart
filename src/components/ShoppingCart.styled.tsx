@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const ShoppingCartContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 10;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: var(--primary);
+  overflow-y: scroll;
 `;
 
 export const CartHeader = styled.div`
@@ -47,4 +48,15 @@ export const CloseBtn = styled.span`
   &::after {
     transform: rotate(-45deg);
   }
+`;
+
+export const CartBody = styled.div`
+  padding: 10px;
+`;
+
+export const TotalSum = styled.div`
+  text-align: right;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 1.35rem;
 `;
