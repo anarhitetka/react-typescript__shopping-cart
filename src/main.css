@@ -12,6 +12,8 @@
   --blue-light: rgb(213, 247, 245);
   --blue-medium: rgb(90, 175, 170);
   --blue-dark: rgb(41, 70, 68);
+  --red-light: rgb(238, 187, 187);
+  --red-medium: rgb(206, 55, 55);
 }
 body {
   margin: 0;

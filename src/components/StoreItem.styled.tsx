@@ -26,36 +26,58 @@ export const CardTitleAndPrice = styled.div`
   }
 `;
 
-export const AddToCartSection = styled.div`
+export const CartControlsSection = styled.div`
   display: flex;
   justify-content: center;
-`;
 
-export const CartControlsWrapper = styled.div`
-  border: 1px solid orange;
-  padding: 10px;
-  border-radius: 20px;
-  margin: 0 5px;
-  width: 150px;
-  text-align: center;
-`;
+  .select-quantity-btn {
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 5px;
+    width: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-export const CartButton = styled.div`
-  border: 1px solid orange;
-  padding: 10px;
-  border-radius: 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  width: 150px;
-  text-align: center;
-  font-size: 0.9rem;
-`;
+  .increase-btn,
+  .decrease-btn {
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: var(--primary);
+    border: none;
+    font-size: 1.3rem;
+  }
 
-export const ChangeQuantityBtn = styled.span`
-  padding: 5px 15px;
-  cursor: pointer;
-`;
+  .increase-btn:hover,
+  .decrease-btn:hover {
+    color: var(--blue-medium);
+  }
 
-export const Quantity = styled.span`
-  padding: 5px 15px;
+  .quantity-num {
+    padding: 0 15px;
+    display: inline-block;
+    width: 20px;
+    font-weight: 700;
+  }
+
+  .add-to-cart-btn,
+  .remove-from-cart-btn {
+    border: none;
+    background-color: var(--primary);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    width: 180px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .add-to-cart-btn {
+    color: var(--blue-medium);
+  }
+  .remove-from-cart-btn {
+    color: var(--red-medium);
+  }
 `;

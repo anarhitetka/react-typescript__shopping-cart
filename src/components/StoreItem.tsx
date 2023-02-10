@@ -39,29 +39,41 @@ export function StoreItem({
           <p>{formatCurrency(price)}</p>
         </S.CardTitleAndPrice>
 
-        <S.AddToCartSection>
-          <S.CartControlsWrapper>
-            <S.ChangeQuantityBtn onClick={() => decreaseCartQuantity(id)}>
+        <S.CartControlsSection>
+          <div className="select-quantity-btn">
+            <button
+              className="decrease-btn"
+              onClick={() => decreaseCartQuantity(id)}
+            >
               -
-            </S.ChangeQuantityBtn>
+            </button>
 
-            <S.Quantity>{quantity}</S.Quantity>
+            <span className="quantity-num">{quantity}</span>
 
-            <S.ChangeQuantityBtn onClick={() => increaseCartQuantity(id)}>
+            <button
+              className="increase-btn"
+              onClick={() => increaseCartQuantity(id)}
+            >
               +
-            </S.ChangeQuantityBtn>
-          </S.CartControlsWrapper>
+            </button>
+          </div>
 
-          {quantity == 0 ? (
-            <S.CartButton onClick={() => increaseCartQuantity(id)}>
+          {quantity === 0 ? (
+            <button
+              className="add-to-cart-btn"
+              onClick={() => increaseCartQuantity(id)}
+            >
               ADD TO CART
-            </S.CartButton>
+            </button>
           ) : (
-            <S.CartButton onClick={() => removeFromCart(id)}>
+            <button
+              className="remove-from-cart-btn"
+              onClick={() => removeFromCart(id)}
+            >
               REMOVE FROM CART
-            </S.CartButton>
+            </button>
           )}
-        </S.AddToCartSection>
+        </S.CartControlsSection>
       </S.CardBody>
     </>
   );
