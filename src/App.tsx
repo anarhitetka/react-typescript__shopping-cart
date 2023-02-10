@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { ShoppingCartContextProvider } from "./context/ShoppingCartContext";
+import { ShoppingCart } from "./components/ShoppingCart";
 
 function App(): JSX.Element {
   return (
@@ -15,6 +16,7 @@ function App(): JSX.Element {
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <ShoppingCart />
       </div>
     </ShoppingCartContextProvider>
   );

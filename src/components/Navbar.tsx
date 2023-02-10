@@ -4,7 +4,7 @@ import cartSvg from "../assets/cart.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext.tsx";
 
 export function Navbar(): JSX.Element {
-  const { cartItemsQuantity } = useShoppingCart();
+  const { openCart, cartItemsQuantity } = useShoppingCart();
 
   return (
     <S.Nav>
@@ -24,9 +24,11 @@ export function Navbar(): JSX.Element {
         </NavLink>
       </div>
       <div>
-        <S.NavButtonShoppingCart>
+        <S.NavButtonShoppingCart onClick={openCart}>
           <img src={cartSvg} alt="shopping cart" />
-          <S.NumOfItemsInCart>{cartItemsQuantity}</S.NumOfItemsInCart>
+          {cartItemsQuantity > 0 && (
+            <S.NumOfItemsInCart>{cartItemsQuantity}</S.NumOfItemsInCart>
+          )}
         </S.NavButtonShoppingCart>
       </div>
     </S.Nav>
