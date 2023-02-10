@@ -70,7 +70,7 @@ export function StoreItem({
               className="remove-from-cart-btn"
               onClick={() => removeFromCart(id)}
             >
-              REMOVE FROM CART
+              REMOVE
             </button>
           )}
         </S.CartControlsSection>

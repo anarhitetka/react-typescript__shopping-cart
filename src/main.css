@@ -14,6 +14,7 @@
   --blue-dark: rgb(41, 70, 68);
   --red-light: rgb(238, 187, 187);
   --red-medium: rgb(206, 55, 55);
+  overflow-y: hidden;
 }
 body {
   margin: 0;

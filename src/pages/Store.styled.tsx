@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const StoreContainer = styled.div`
-  margin: 2rem 0;
+  padding: 2rem 0;
+  overflow-y: auto;
+  height: 80vh;
 `;
 
 export const ProductsContainer = styled.div`
