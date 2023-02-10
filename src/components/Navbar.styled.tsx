@@ -10,9 +10,9 @@ export const Nav = styled.nav`
   padding: 0 20px;
   height: 80px;
   background-color: var(--primary);
-  box-shadow: -3px -3px 16px 3px var(--shadow-dark);
-  -webkit-box-shadow: -3px -3px 16px 3px var(--shadow-dark);
-  -moz-box-shadow: -3px -3px 16px 3px var(--shadow-dark);
+  box-shadow: -1px -1px 3px 1px var(--shadow-dark);
+  -webkit-box-shadow: -1px -1px 3px 1px var(--shadow-dark);
+  -moz-box-shadow: -1px -1px 3px 1px var(--shadow-dark);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -24,6 +24,21 @@ export const Nav = styled.nav`
     div {
       display: flex;
       flex-direction: column;
+    }
+  }
+`;
+
+export const LogoNavbar = styled.div`
+  .left {
+    color: grey;
+  }
+  .right {
+    color: var(--blue-medium);
+  }
+  @media (max-width: 520px) {
+    .left,
+    .right {
+      display: none;
     }
   }
 `;
@@ -56,7 +71,7 @@ export const NavButton = styled.button`
 
 export const NavButtonShoppingCart = styled.button`
   background-color: var(--primary);
-  border: 1px solid var(--secondary-light);
+  border: 1px solid var(--green-medium);
   margin-right: 20px;
   padding: 10px 12px;
   border-radius: 50px;
@@ -66,8 +81,7 @@ export const NavButtonShoppingCart = styled.button`
     margin-right: 0;
   }
   &:hover {
-    background-color: var(--green-light);
-    border: 1px solid var(--green-medium);
+    border: 1px solid var(--secondary-medium);
   }
 `;
 

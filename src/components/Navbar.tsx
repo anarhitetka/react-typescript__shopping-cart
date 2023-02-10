@@ -5,6 +5,10 @@ import cartSvg from "../assets/cart.svg";
 export function Navbar() {
   return (
     <S.Nav>
+      <S.LogoNavbar>
+        <span className="left">go</span>
+        <span className="right">shopping</span>
+      </S.LogoNavbar>
       <div>
         <NavLink to="/">
           <S.NavButton>Home</S.NavButton>
