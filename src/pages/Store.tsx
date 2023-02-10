@@ -8,6 +8,7 @@ interface Product {
   title: string;
   price: number;
   images: Array<string>;
+  thumbnail: string;
 }
 
 export function Store() {
