@@ -28,10 +28,12 @@ export function ShoppingCartContextProvider({
 }: ContextProviderProps): JSX.Element {
   const [cartItems, setCartItems] = useState<Array<CartItem>>([]);
 
-  const cartItemsQuantity = cartItems.reduce(
-    (quantity, item) => item.quantity + quantity,
-    0
-  );
+  //   const cartItemsQuantity = cartItems.reduce(
+  //     (quantity, item) => item.quantity + quantity,
+  //     0
+  //   );
+
+  const cartItemsQuantity = cartItems.length;
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
